@@ -1,0 +1,48 @@
+
+<script src="{{ url_for('static',filename='backend/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/node-waves/waves.min.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/jquery-countto/jquery.countTo.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/raphael/raphael.min.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/morrisjs/morris.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/chartjs/Chart.bundle.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/flot-charts/jquery.flot.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/flot-charts/jquery.flot.resize.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/flot-charts/jquery.flot.pie.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/flot-charts/jquery.flot.categories.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/flot-charts/jquery.flot.time.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/jquery-sparkline/jquery.sparkline.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/js/admin.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/bootstrap-notify/bootstrap-notify.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/block-ui/block-ui.min.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/js/custom.js') }}"></script>
+
+    <script type="text/javascript">
+        $('.right-sidebar .demo-choose-skin li').on('click', function () {
+            var $body = $('body');
+            var $this = $(this);
+
+            var existTheme = $body.data('theme');
+            $('.right-sidebar .demo-choose-skin li').removeClass('active');
+            $body.removeClass();
+            $this.addClass('active');
+
+            $body.attr('data-theme', $this.data('theme'));
+            $body.addClass('theme-' + $this.data('theme'));
+{#            $.ajax({#}
+{#                url: "{{ route('panel.theme_color') }}",#}
+{#                data: "color=" + $this.data('theme'),#}
+{#                processData: false,#}
+{#                contentType: false,#}
+{#                type: 'GET',#}
+{#                success: function (result) {#}
+{#                },#}
+{#                error: function (){#}
+{#                }#}
+{#            });#}
+        });
+    </script>
+
+

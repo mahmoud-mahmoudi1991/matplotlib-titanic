@@ -1,0 +1,101 @@
+{#@extends('adminbsb.layouts.master')#}
+
+{% extends "layouts/master.html" %}
+
+{% block content %}
+<!-- Widgets -->
+<div class="row clearfix widgets">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+		<a href="#" >
+			<div class="info-box bg-pink hover-expand-effect">
+				<div class="icon">
+					<i class="material-icons">person_add</i>
+				</div>
+				<div class="content">
+					<div class="text">کاربران جدید</div>
+					<div class="number count-to" data-from="0" data-to="10" data-speed="1000" data-fresh-interval="10">10</div>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+		<a href="#" >
+			<div class="info-box bg-deep-orange hover-expand-effect">
+				<div class="icon">
+					<i class="material-icons">business</i>
+				</div>
+				<div class="content">
+					<div class="text">کسب و کار</div>
+					<div class="number count-to" data-from="0" data-to="10" data-speed="1000" data-fresh-interval="20">10</div>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+		<a href="#" >
+			<div class="info-box bg-green hover-expand-effect">
+				<div class="icon">
+					<i class="material-icons">event</i>
+				</div>
+				<div class="content">
+					<div class="text">رویدادها</div>
+					<div class="number count-to" data-from="0" data-to="34" data-speed="1000" data-fresh-interval="20">10</div>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+		<a href="#" >
+			<div class="info-box bg-grey hover-expand-effect">
+				<div class="icon">
+					<i class="material-icons">people</i>
+				</div>
+				<div class="content">
+					<div class="text">مالکان کسب وکار</div>
+					<div class="number count-to" data-from="0" data-to="45" data-speed="1000" data-fresh-interval="20">10</div>
+				</div>
+			</div>
+		</a>
+	</div>
+
+
+</div>
+<!-- #END# Widgets -->
+
+{% endblock %}
+{#@section('scripts')#}
+
+{% block scripts %}
+<script src="{{ url_for('static',filename='backend/js/pages/index.js') }}"></script>
+{% endblock %}
+
+{#<script type="application/javascript">#}
+{#	var data = [], totalPoints = 110;#}
+{#	function getOnlineUsers() {#}
+{#		y = function () {#}
+{#			var tmp = null;#}
+{#			$.ajax({#}
+{#				'type': "GET",#}
+{#				'async': false,#}
+{#				'url': "{{ route('admin.activeUsers') }}",#}
+{#				'success': function (data) {#}
+{#					tmp = data*10;#}
+{#				}#}
+{#			});#}
+{#			return tmp;#}
+{#		}();#}
+{##}
+{#		data.push(y);#}
+{##}
+{#		var res = [];#}
+{#		for (var i = 0; i < data.length; ++i) {#}
+{#			res.push([i, data[i]]);#}
+{#		}#}
+{##}
+{#		return res;#}
+{#	}#}
+{#</script>--}}#}
+{#@endsection#}

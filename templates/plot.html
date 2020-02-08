@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th,tr,td{
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+<h1>{{ data.image }}</h1>
+{#<h2 style="text-align: center;">{{ data.data_set_name }}</h2>#}
+<img src="{{ url_for('static',filename=data.image) }}">
+</body>
+</html>

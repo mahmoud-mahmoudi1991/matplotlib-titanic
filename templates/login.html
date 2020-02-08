@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>ورود</title>
+    <!-- Favicon-->
+    <link rel="icon" href="#" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <link href="{{ url_for('static',filename='backend/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='backend/plugins/bootstrap/css/bootstrap-rtl.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='backend/plugins/node-waves/waves.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='backend/plugins/animate-css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='backend/css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='backend/css/style-rtl.css') }}" rel="stylesheet">
+
+
+    <style>
+        .card-header {
+            border-radius: 4px 4px 0 0;
+            padding: 15px;
+            background: #185365;
+            font-weight: bold;
+            color: white;
+        }
+
+        .card {
+            border-radius: 0 0 4px 4px;
+        }
+    </style>
+    {#    @yield('styles')#}
+</head>
+
+<body class="login-page">
+<div class="login-box">
+    {#        <div class="logo">#}
+    {#            <a href="#">پنل ادمین <b></b></a>#}
+    {#        </div>#}
+    <div class="card-header">ورود مدیران</div>
+    <div class="card">
+        <div class="body">
+
+
+            <style>
+                .rc-anchor-normal .rc-anchor-checkbox-label,
+                .rc-anchor-checkbox-label, #recaptcha-anchor-label {
+                    font-family: irweb !important;
+                }
+            </style>
+
+
+            <form action="#" id="sign_in" method="POST">
+
+                {#	@if (count($errors) > 0)#}
+                {#		<div class="alert alert-danger">#}
+                {#			<ul>#}
+                {#				@foreach ($errors->all() as $error)#}
+                {#					<li>{{ $error }}</li>#}
+                {#				@endforeach#}
+                {#			</ul>#}
+                {#		</div>#}
+                {#	@endif#}
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">person</i>
+                    </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="username" placeholder="ایمیل" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">lock</i>
+                    </span>
+                    <div class="form-line">
+                        <input type="password" class="form-control" name="password" placeholder="پسورد" required
+                               autocomplete="off">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="col-md-12">
+                        {#			{!! app('captcha')->display($attributes = [], $options = ['lang'=> 'fa']) !!}#}
+                    </div>
+                </div>
+                <div class="row">
+{#                    <div class="col-xs-8 p-t-5">#}
+{#                        <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">#}
+{#                        <label for="rememberme">مرا به خاطر بسپار</label>#}
+{#                    </div>#}
+                    <div class="col-xs-4">
+                        <button class="btn btn-block bg-pink waves-effect" type="submit">ورود</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Jquery Core Js -->
+<script src="{{ url_for('static',filename='backend/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/node-waves/waves.min.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/plugins/jquery-validation/jquery.validate.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/js/admin.js') }}"></script>
+<script src="{{ url_for('static',filename='backend/js/pages/examples/sign-in.js') }}"></script>
+
+</body>
+
+</html>

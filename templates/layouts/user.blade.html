@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>@yield('title')</title>
+    <!-- Favicon-->
+    <link rel="icon" href="{{ asset('backend/favicon.ico') }}" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="{{ asset('backend/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/plugins/bootstrap/css/bootstrap-rtl.min.css') }}" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <!-- <link href="{{ asset('backend/plugins/node-waves/waves.min.css') }}" rel="stylesheet" /> -->
+
+    <!-- Animation Css -->
+    <!-- <link href="{{ asset('backend/plugins/animate-css/animate.min.css') }}" rel="stylesheet" /> -->
+
+    <!-- Custom Css -->
+    <link href="{{ asset('backend/css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/css/style-rtl.css') }}" rel="stylesheet">
+
+    @yield('styles')
+</head>
+
+<body class="login-page">
+    <div class="login-box">
+        <div class="logo">
+            <a href="javascript:void(0);">@lang('admin::default.admin_panel') <b>@if(count($title)) {{$title->value}} @else @lang('admin::default.roham_web') @endif</b></a>
+        </div>
+        <div class="card">
+            <div class="body">
+                @yield('content')
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery Core Js -->
+    <script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{{ asset('backend/plugins/node-waves/waves.min.js') }}"></script>
+
+    <!-- Validation Plugin Js -->
+    <script src="{{ asset('backend/plugins/jquery-validation/jquery.validate.js') }}"></script>
+
+    <!-- Custom Js -->
+    <script src="{{ asset('backend/js/admin.js') }}"></script>
+    <!-- <script src="{{ asset('backend/js/pages/examples/sign-in.js') }}"></script> -->
+</body>
+
+</html>

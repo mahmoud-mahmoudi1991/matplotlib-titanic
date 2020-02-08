@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th,tr,td{
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+<h2 style="text-align: center;">{{ data.data_set_name }}</h2>
+<table style="width:100%">
+  <tr>
+        <th>Index</th>
+      {% for col in data.columns  %}
+      <th>{{ col }}</th>
+      {% endfor %}
+  </tr>
+
+{% for row in data.rows %}
+     <tr>
+    {% for value in row %}
+        <td>{{ value }}</td>
+    {% endfor %}
+    </tr>
+{% endfor %}
+
+
+{#    <td>Smith</td>#}
+{#    <td>50</td>#}
+
+
+</table>
+</body>
+</html>

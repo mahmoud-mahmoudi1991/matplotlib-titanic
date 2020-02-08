@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#    <link rel="stylesheet" href="{{ url_for('static',filename='test.css') }}">#}
+{#</head>#}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="robots" content="noindex,nofollow">
+
+
+    <title>panel</title>
+{% include 'layouts/head.html' %}
+
+{% block styles %}
+{% endblock %}
+
+</head>
+<body>
+hello welcome to the my site
+im very v ery happy
+
+{% block content %}
+
+{% endblock %}
+
+{% if title %}
+<p>{{ title }}</p>
+{% else %}
+<p>not have a title</p>
+{% endif %}
+
+
+</body>
+</html>

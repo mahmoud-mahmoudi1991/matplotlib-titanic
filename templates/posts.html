@@ -1,0 +1,18 @@
+{% extends 'test.html' %}
+
+{% block content %}
+
+
+  <form action="/register" method="post">
+{#  {{ form.hidden_tag() }}#}
+
+  {{ form.name(class="t test") }}
+  <button type="submit">send</button>
+  </form>
+
+{% for p in posts %}
+    <p>{{ p.name }}</p>
+{% endfor %}
+
+{% endblock %}
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="robots" content="noindex,nofollow">
+
+
+
+    {% block title %}
+
+    {% endblock %}
+
+    {% include "layouts/head.html" %}
+
+    {% block styles %}
+    {% endblock %}
+</head>
+
+<body class="theme-green" data-theme="green">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="preloader">
+            <div class="spinner-layer pl-red" style="direction: ltr;">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>لطفا صبر کنید...</p>
+    </div>
+</div>
+
+<div class="overlay"></div>
+{% include "layouts/navbar.html" %}
+
+<section>
+    {% include "layouts/left_side.html" %}
+
+    {% include "layouts/right_side.html" %}
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</section>
+
+{% include "layouts/js_files.html" %}
+{% block scripts %}
+
+{% endblock %}
+
+</body>
+<script type="text/javascript">
+    {% if session["msg"] %}
+        showNotification('{{ session["msg_color"] }}', '{{ session["msg"] }}', 'bottom', 'left')
+          {{  session.pop("msg") }}
+          {{  session.pop("msg_color") }}
+    {% endif %}
+
+
+{#    {% with messages = get_flashed_messages(with_categories=true) %}#}
+{#        {{ messages }}#}
+{#        {% if messages %}#}
+{#            {% for category, message in messages %}#}
+{#                {% if category == 'msg' %}#}
+{#                    {% print(messages) %}#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{#        {% endif %}#}
+{#    {% endwith %}#}
+
+</script>
+</html>
